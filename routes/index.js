@@ -9,7 +9,7 @@ module.exports = function(request, response) {
    // Undefined is treated as false
    // Shows the login page if you're logged in
    if (username) {
-        response.render('home', {username:username});
+        response.render('profile', {username:username});
    }
    
    // Delete request error after rendering to get rid of the error
