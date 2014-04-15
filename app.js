@@ -15,7 +15,7 @@ app.use(express.static(__dirname+'/statics'));
 // You store a cookie (little files) into the user's browser
 app.use(express.cookieParser());
 // Encypts the cookie
-app.use(express.session({secret:'CS 340 3/6/2014'}));
+app.use(express.session({secret:'CS 340 4/14/2014'}));
 
 // Route the requests
 app.get('/', require('./routes/index'));
@@ -23,12 +23,13 @@ app.post('/login', require('./routes/login'));
 app.post('/register', require('./routes/register'));
 app.get('/profile', require('./routes/profile'));
 app.get('/logout', require('./routes/logout'));
+app.get('/note', require('./routes/note'));
 
 // Default route
 app.get('*', function(request,response) {
-    response.send('Nothing to see here!');
+    response.send('Nothing to see here~!');
 });
 
 // Start the server
-app.listen(8080);
+app.listen(8082);
 console.log('Server is up.');
