@@ -23,6 +23,7 @@ app.post('/login', require('./routes/login'));
 app.post('/register', require('./routes/register'));
 app.get('/profile', require('./routes/profile'));
 app.get('/logout', require('./routes/logout'));
+app.get('/note', require('./routes/note'));
 
 // Default route
 app.get('*', function(request,response) {
@@ -30,5 +31,5 @@ app.get('*', function(request,response) {
 });
 
 // Start the server
-app.listen(8080);
+app.listen(8082);
 console.log('Server is up.');
