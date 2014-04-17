@@ -1,19 +1,14 @@
-// Note page: Create, edit, or delete notes
-
-var users = require('../models/users');
-var validator = require('validator');
+// Note page: Show Note menu
 
 module.exports = function(request,response) {
-    response.render('note', {username:username});
-    
     var username = request.session.username;
     
-    // If logged in, goes to the profile
+    // If logged in, go to addNote
     if (username) {
         response.render('note', {username:username});
     }
     
-    // If logged out, go to index page
+    // Sends to another route
     else {
         response.redirect('/');
     }

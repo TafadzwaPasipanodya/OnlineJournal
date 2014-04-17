@@ -1,4 +1,5 @@
 // A server with user authentication
+
 var express = require('express');
 
 // Create a server
@@ -24,6 +25,8 @@ app.post('/register', require('./routes/register'));
 app.get('/profile', require('./routes/profile'));
 app.get('/logout', require('./routes/logout'));
 app.get('/note', require('./routes/note'));
+app.get('/addNote', require('./routes/addNote'));
+app.post('/addNote', require('./routes/addNote'));
 
 // Default route
 app.get('*', function(request,response) {
