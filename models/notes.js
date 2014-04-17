@@ -31,7 +31,7 @@ module.exports.edit = function(name, callback) {
             note.content = content;
         }
         
-        db.addresses.save(note, function(error) {
+        db.notes.save(note, function(error) {
             if (error) throw error;
         });
     });
