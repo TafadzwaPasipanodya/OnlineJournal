@@ -1,4 +1,4 @@
-// Note page: Create, edit, or delete notes
+// Note page: Create, edit, save, view, or delete notes
 
 var users = require('../models/users');
 var validator = require('validator');
@@ -18,3 +18,9 @@ module.exports = function(request,response) {
         response.redirect('/');
     }
 };
+
+// Delete a note
+
+// View notes
+
+// Save notes
