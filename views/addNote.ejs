@@ -1,11 +1,10 @@
-<% include chunks/head %>
-<% include chunks/StuInfo %>
-<% include chunks/nav_bar %>
 <% include note %>
 
 <div>
-    <textarea name="Note"></textarea>
-    <input type="submit" value="Save">
+    <form method="post">
+        <textarea wrap="off" id="content" placeholder="Note" required></textarea>
+        <input type="submit" value="Save">
+    </form>
 </div>
 
 <% include chunks/foot %>

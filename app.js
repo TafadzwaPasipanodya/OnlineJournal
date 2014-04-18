@@ -24,7 +24,10 @@ app.post('/login', require('./routes/login'));
 app.post('/register', require('./routes/register'));
 app.get('/profile', require('./routes/profile'));
 app.get('/logout', require('./routes/logout'));
-app.get('/note', require('./routes/note'));
+app.get('/noteTab', require('./routes/noteTab'));
+app.post('/note', require('./routes/note'));
+app.get('/allNotes', require('./routes/allNotes'));
+app.get('/note/:id', require('./routes/oneNote'));
 app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
 

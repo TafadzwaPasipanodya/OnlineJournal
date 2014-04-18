@@ -5,17 +5,11 @@ var mongojs = require('mongojs');
 var db = mongojs('noteapp', ['notes']);
 
 // Create a new note
-module.exports.create = function(name, callback) {
-    db.notes.findOne({name:name}, function(error, note){
+module.exports.create = function(name, itemid, callback) {
+    db.notes.insert({name:name, parent:itemid}, function(error) {
         if (error) throw error;
         
-        if (!note) {
-            note = {name:name, content:""};
-        }
-        
-        db.notes.save(note, function(error){
-            if (error) throw error;
-        });
+        callback();
     });
 };
 
@@ -53,6 +47,23 @@ module.exports.view = function(name, callback) {
     
     });
 }
+
+// Retrieve all notes from database
+module.exports.retrieveAll = function(callback) {
+    db.notes.find({}, function(error, allNotes) {
+        if (error) throw error;
+        callback(allNotes);
+    });
+};
+
+// Retrieve one note from database
+module.exports.retrieveOne = function(itemid, callback) {
+    db.notes.findOne({_id:itemid}, function(error, note) {
+        if (error) throw error;
+        callback(note);
+    });
+};
+
 // Delete all notes in database
 module.exports.deleteAll = function(callback) {
     db.notes.remove({}, function(error) {
