@@ -55,7 +55,8 @@ module.exports.delete = function(name, callback) {
         if (note) {
             db.notes.remove({name:name})
         }
-        callback(notes);
+
+        callback(note);
     });
 };
 
