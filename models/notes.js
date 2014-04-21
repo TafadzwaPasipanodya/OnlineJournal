@@ -48,6 +48,34 @@ module.exports.view = function(name, callback) {
     });
 }
 
+// Delete a note
+module.exports.delete = function(name, callback) {
+    db.notes.findOne({name:name}, function(error, note) {
+        if (error) throw error;
+        
+        if (note) {
+            db.notes.remove({name:name})
+        }
+        callback(notes);
+    });
+};
+
+// Save a note
+module.exports.save = function(name, callback) {
+    var content = request.body.content;
+    
+    db.notes.findOne({name:name}, function(error, newnote) {
+        if (error) throw error;
+
+        if (newnote) {
+            newnote.content = content;
+        }
+        db.notes.save(newnote, function(error) {
+            if (error) throw error;
+        });
+    });
+}
+
 // Retrieve all notes from database
 module.exports.retrieveAll = function(callback) {
     db.notes.find({}, function(error, allNotes) {
