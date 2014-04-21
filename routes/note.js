@@ -1,12 +1,11 @@
 var notes = require('../models/notes');
-
 var validator = require('validator');
 
 module.exports = function(request, response) {
-    var name = validator.escape(request.body.note);
-    var itemid = request.body.itemid;
+    var name = validator.escape(request.body.name);
+    var content = request.body.content;
 
-    notes.create(name, itemid, function() {
-        response.redirect('/note/'+itemid);
+    notes.create(name, content, function() {
+        response.redirect('/noteTab');
     });
 };

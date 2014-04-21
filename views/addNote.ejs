@@ -1,8 +1,9 @@
 <% include note %>
 
 <div>
-    <form method="post">
-        <textarea wrap="off" id="content" placeholder="Note" required></textarea>
+    <form method="post" action="/note">
+        <input type="text" name="name" id="name" placeholder="Note Name" >
+        <textarea name="content" wrap="off" id="content" placeholder="Note" required></textarea>
         <input type="submit" value="Save">
     </form>
 </div>

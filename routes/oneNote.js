@@ -5,6 +5,6 @@ module.exports = function(request, response) {
     var index = url.lastIndexOf("/");
     var itemid = url.substring(index+1);
     notes.retrieveOne(itemid, function(oneNote) {
-        response.render('oneNote', {notes:oneNote});
+        response.render('oneNote', {note:oneNote});
     });
 };

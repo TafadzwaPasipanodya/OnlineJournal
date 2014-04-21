@@ -5,17 +5,16 @@ var mongojs = require('mongojs');
 var db = mongojs('noteapp', ['notes']);
 
 // Create a new note
-module.exports.create = function(name, itemid, callback) {
-    db.notes.insert({name:name, parent:itemid}, function(error) {
+module.exports.create = function(name, content, callback) {
+    db.notes.insert({name:name, content:content}, function(error) {
         if (error) throw error;
-        
         callback();
     });
 };
 
 // Edit an existing note
 module.exports.edit = function(name, callback) {
-    // Receive the content from the textbox
+    // Receive the content from the textarea
     var content = request.body.content;
     
     db.notes.findOne({name:name}, function(error, note) {
@@ -46,7 +45,7 @@ module.exports.view = function(name, callback) {
     
     
     });
-}
+};
 
 // Delete a note
 module.exports.delete = function(name, callback) {

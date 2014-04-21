@@ -1,10 +1,10 @@
 <% include note %>
 
+<h3><%= note.name %></h3>
+<p><%= note.content %></p>
+
 <form method="post" action="/note">
-    <input type="text" placeholder="Note Name" required>
-    <textarea id="content" placeholder="Note" required></textarea>
-    <input type="hidden" name="itemid" value="<%=note._id%>">
-    <input type="submit" value="Save">
+    <input type="submit" value="Edit">
 </form>
 
 <% include chunks/foot %>
