@@ -31,19 +31,11 @@ module.exports.edit = function(name, callback) {
 };
 
 // View notes for a specific user
-module.exports.view = function(name, callback) {
-    db.notes.find({}, function(error, note) {
+module.exports.retrieveAll = function(callback) {
+    db.notes.find({}, function(error, notes) {
         if (error) throw error;
         
-        var table = '<table>';
-        table += '<tr><th>Notes</th></tr>';
-        note.forEach(function(notes) {
-            table += '<tr><th>' + notes.name + '</th></tr>';
-        });
-    
-    table += '</table>';
-    
-    
+        callback(notes);
     });
 };
 

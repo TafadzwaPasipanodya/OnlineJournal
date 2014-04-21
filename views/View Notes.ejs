@@ -1,0 +1,11 @@
+
+<table>
+    <% notes.forEach(function(note) { %>
+        <tr>
+            <td><b><big><%= note.name %></big></b></a>
+            <p><%= note.content%></p></td>
+        </tr>
+    <% }); %>
+</table>
+
+<% include chunks/foot %>
