@@ -8,7 +8,6 @@ module.exports = function(request, response) {
     
     // If logged in, then...
     if (username) {
-        
         // Render all notes from database
         note.retrieveAll(function(allNotes) {
             response.render('allNotes', {notes:allNotes, username:username});

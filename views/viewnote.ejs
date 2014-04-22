@@ -1,0 +1,13 @@
+<% include chunks/head %>
+<% include chunks/nav_bar %>
+
+<table>
+    <% notes.forEach(function(note) { %>
+        <tr>
+            <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
+            <p><%= note.content%></p></td>
+        </tr>
+    <% }); %>
+</table>
+
+<% include chunks/foot %>
