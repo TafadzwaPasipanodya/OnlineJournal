@@ -3,10 +3,15 @@
 <table>
     <% notes.forEach(function(note) { %>
         <tr>
+<<<<<<< HEAD
             <td><big><b><%= note.name %></b></big>
             <p><small><%= note.content%></small></p>
             <input type="submit" value="Delete">
             </td>
+=======
+            <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
+            <input type="submit" value="Delete"></td>
+>>>>>>> f0dfb294221255e4818ffa802319a76ebbd0387a
         </tr>
     <% }); %>
 </table>
