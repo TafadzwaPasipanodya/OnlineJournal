@@ -4,7 +4,9 @@
     <% notes.forEach(function(note) { %>
         <tr>
             <td><big><b><%= note.name %></b></big>
-            <p><small><%= note.content%></small></p></td>
+            <p><small><%= note.content%></small></p>
+            <input type="submit" value="Delete">
+                </td>
         </tr>
     <% }); %>
 </table>
