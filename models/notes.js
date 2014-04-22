@@ -30,15 +30,6 @@ module.exports.edit = function(name, callback) {
     });
 };
 
-// View notes for a specific user
-module.exports.retrieveAll = function(callback) {
-    db.notes.find({}, function(error, notes) {
-        if (error) throw error;
-        
-        callback(notes);
-    });
-};
-
 // Delete a note
 module.exports.delete = function(name, callback) {
     db.notes.findOne({name:name}, function(error, note) {
@@ -68,7 +59,7 @@ module.exports.save = function(name, callback) {
     });
 }
 
-// Retrieve all notes from database
+// View all notes from database
 module.exports.retrieveAll = function(callback) {
     db.notes.find({}, function(error, allNotes) {
         if (error) throw error;
@@ -76,7 +67,7 @@ module.exports.retrieveAll = function(callback) {
     });
 };
 
-// Retrieve one note from database
+// View one note from database
 module.exports.retrieveOne = function(itemid, callback) {
     db.notes.findOne({_id:itemid}, function(error, note) {
         if (error) throw error;
