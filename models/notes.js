@@ -31,15 +31,11 @@ module.exports.edit = function(name, callback) {
 };
 
 // Delete a note
-module.exports.delete = function(name, callback) {
-    db.notes.findOne({name:name}, function(error, note) {
+module.exports.delete = function(name, content, callback) {
+    db.notes.remove({name:name, content:content}, function(error) {
         if (error) throw error;
         
-        if (note) {
-            db.notes.remove({name:name})
-        }
-
-        callback(note);
+        callback();
     });
 };
 
