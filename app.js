@@ -30,6 +30,8 @@ app.get('/allNotes', require('./routes/allNotes'));
 app.get('/note/:id', require('./routes/oneNote'));
 app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
+app.get('/delete', require('./routes/delete'));
+app.post('/delete', require('./routes/delete'));
 
 // Default route
 app.get('*', function(request,response) {
