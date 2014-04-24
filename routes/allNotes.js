@@ -1,6 +1,6 @@
 // Under the Note Menu: allows user to view all notes
 
-var note = require('../models/notes');
+var notes = require('../models/notes');
 
 module.exports = function(request, response) {
     // Get the username from the request session
@@ -9,7 +9,7 @@ module.exports = function(request, response) {
     // If logged in, then...
     if (username) {
         // Render all notes from database
-        note.retrieveAll(function(allNotes) {
+        notes.retrieveAll(function(allNotes) {
             response.render('allNotes', {notes:allNotes, username:username});
         });
     }

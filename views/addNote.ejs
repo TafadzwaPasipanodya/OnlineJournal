@@ -1,9 +1,12 @@
-<% include note %>
+<% include chunks/head %>
+<% include chunks/StuInfo %>
+<% include chunks/nav_bar %>
+<% include chunks/noteMenu %>
 
 <div>
     <form method="post" action="/note">
         <fieldset>
-            <input type="text" name="name" id="name" placeholder="Note Name" >
+            <input type="text" name="name" id="name" placeholder="Note Name" required>
             <textarea name="content" wrap="off" id="content" placeholder="Note" required></textarea>
             <input type="submit" value="Save">
         </fieldset>
