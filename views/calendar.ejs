@@ -1,5 +1,69 @@
 <% include chunks/head %>
 <% include chunks/StuInfo %>
 <% include chunks/nav_bar %>
-<% include chunks/calendarTable %>
+
+<table>
+    <tr>
+        <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
+    </tr>
+    
+    <% %>
+    <tr>
+        <td><div class="date"> <%= month[0] %></div></td>
+        <td><div class="date"> <%= month[1] %></div></td>
+        <td><div class="date"> <%= month[2] %></div></td>
+        <td><div class="date"> <%= month[3] %></div></td>
+        <td><div class="date"> <%= month[4] %></div></td>
+        <td><div class="date"> <%= month[5] %></div></td>
+        <td><div class="date"> <%= month[6] %></div></td>
+    </tr>
+    <tr>
+        <td><div class="date"> <%= month[7] %></div></td>
+        <td><div class="date"> <%= month[8] %></div></td>
+        <td><div class="date"> <%= month[9] %></div></td>
+        <td><div class="date"> <%= month[10] %></div></td>
+        <td><div class="date"> <%= month[11] %></div></td>
+        <td><div class="date"> <%= month[12] %></div></td>
+        <td><div class="date"> <%= month[13] %></div></td>
+    </tr>
+    <tr>
+        <td><div class="date"> <%= month[14] %></div></td>
+        <td><div class="date"> <%= month[15] %></div></td>
+        <td><div class="date"> <%= month[16] %></div></td>
+        <td><div class="date"> <%= month[17] %></div></td>
+        <td><div class="date"> <%= month[18] %></div></td>
+        <td><div class="date"> <%= month[19] %></div></td>
+        <td><div class="date"> <%= month[20] %></div></td>
+    </tr>
+    <tr>
+        <td><div class="date"> <%= month[21] %></div></td>
+        <td><div class="date"> <%= month[22] %></div></td>
+        <td><div class="date"> <%= month[23] %></div></td>
+        <td><div class="date"> <%= month[24] %></div></td>
+        <td><div class="date"> <%= month[25] %></div></td>
+        <td><div class="date"> <%= month[26] %></div></td>
+        <td><div class="date"> <%= month[27] %></div></td>
+    </tr>
+    <tr>
+        <td><div class="date"> <%= month[28] %></div></td>
+        <td><div class="date"> <%= month[29] %></div></td>
+        <td><div class="date"> <%= month[30] %></div></td>
+        <td><div class="date"> <%= month[31] %></div></td>
+        <td><div class="date"> <%= month[32] %></div></td>
+        <td><div class="date"> <%= month[33] %></div></td>
+        <td><div class="date"> <%= month[34] %></div></td>
+    </tr>
+    <%if (month[35] != ""){ %>
+     <tr>
+        <td><div class="date"> <%= month[35] %></div></td>
+        <td><div class="date"> <%= month[36] %></div></td>
+        <td><div class="date"> <%= month[37] %></div></td>
+        <td><div class="date"> <%= month[38] %></div></td>
+        <td><div class="date"> <%= month[39] %></div></td>
+        <td><div class="date"> <%= month[40] %></div></td>
+        <td><div class="date"> <%= month[41] %></div></td>
+    </tr>
+      <%} %>
+</table>
+
 <% include chunks/foot %>
