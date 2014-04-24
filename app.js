@@ -32,7 +32,7 @@ app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
 app.get('/delete', require('./routes/delete'));
 app.post('/delete', require('./routes/delete'));
-
+app.get('/calendarTab', require('./routes/calendarTab'));
 // Default route
 app.get('*', function(request,response) {
     response.send('Nothing to see here~!');
