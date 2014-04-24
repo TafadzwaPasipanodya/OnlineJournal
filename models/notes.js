@@ -31,13 +31,17 @@ module.exports.edit = function(name, callback) {
 };
 
 // Delete a note
-module.exports.delete = function(name, content, callback) {
-    db.notes.remove({name:name, content:content}, function(error) {
+module.exports.del = function(noteid) {
+
+    db.notes.findOne({_id:mongojs.ObjectId(noteid)}, function(error, note) {
         if (error) throw error;
         
-        callback();
+        db.notes.remove(note, function(error) {
+            if (error) throw error;
+        
+        });
     });
-};
+}
 
 // Save a note
 module.exports.save = function(name, callback) {
