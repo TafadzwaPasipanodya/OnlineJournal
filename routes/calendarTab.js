@@ -2,13 +2,18 @@
 
 var calendar = require('../models/calendar');
 
-module.exports = function(request,response) {
+module.exports = function(request, response) {
     var username = request.session.username;
     
     // If logged in, go to calendar
     if (username) {
-        calendar.daysInMonths(2837, 7, function(days){
-            response.render('calendar',{month:days,username:username})
+        var today = new Date();
+        var month = today.getMonth(); //January is 0!
+        var year = today.getFullYear();
+       
+        this_month = calendar.thisMonth();
+        calendar.daysInMonths(year, month, function(days){
+            response.render('calendar',{calendarMonth:this_month,month:days,username:username});
             });
     }
     

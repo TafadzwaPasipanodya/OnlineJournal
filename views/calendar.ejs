@@ -2,12 +2,14 @@
 <% include chunks/StuInfo %>
 <% include chunks/nav_bar %>
 
+<!--<% %>-->
+<h1><%=calendarMonth %></h1>
+
 <table>
     <tr>
         <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
     </tr>
     
-    <% %>
     <tr>
         <td><div class="date"> <%= month[0] %></div></td>
         <td><div class="date"> <%= month[1] %></div></td>
@@ -65,5 +67,6 @@
     </tr>
       <%} %>
 </table>
+<!--<% %>-->
 
 <% include chunks/foot %>
