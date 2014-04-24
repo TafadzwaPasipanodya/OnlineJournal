@@ -4,10 +4,7 @@
 <table>
     <% notes.forEach(function(note) { %>
         <tr>
-            <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
-            <p><%= note.content%></p></td>
+            <td><a href=“/note/<%= note._id %>”><%= note.name %></a></td>
         </tr>
     <% }); %>
 </table>
-
-<% include chunks/foot %>

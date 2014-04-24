@@ -21,12 +21,9 @@ module.exports.edit = function(name, callback) {
         if (error) throw error;
         
         if (note) {
-            note.content = content;
+            db.notes.update({content:content}, content);
         }
-        
-        db.notes.save(note, function(error) {
-            if (error) throw error;
-        });
+        callback();
     });
 };
 
@@ -69,7 +66,7 @@ module.exports.retrieveAll = function(callback) {
 
 // View one note from database
 module.exports.retrieveOne = function(itemid, callback) {
-    db.notes.findOne({_id:itemid}, function(error, note) {
+    db.notes.findOne({_id:mongojs.ObjectId(itemid)}, function(error, note) {
         if (error) throw error;
         callback(note);
     });
