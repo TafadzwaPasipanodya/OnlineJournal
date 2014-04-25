@@ -6,19 +6,19 @@
 <table>
     <% notes.forEach(function(note) { %>
         <tr>
-<<<<<<< HEAD
             <td><big><b><%= note.name %></b></big>
             <p><small><%= note.content%></small></p>
-            <input type="submit" value="Delete">
+            <form method="post" action="/delete">
+                <input type="hidden" name="itemid" value="<%= note._id %>">
+                <input type="submit" value="Delete">
+            </form>
             </td>
             <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
             <input type="submit" value="Delete"></td>
-=======
             <td>
                 <a href="/note/<%= note._id %>"><%= note.name %></a>
                 <input type="submit" value="Delete">
             </td>
->>>>>>> 565bc19c11def78aa05b4767ca0729b43853fc3a
         </tr>
     <% }); %>
 </table>

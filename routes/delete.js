@@ -4,11 +4,15 @@ var notes = require('../models/notes');
 
 module.exports = function(request,response) {
     var username = request.session.username;
-
+    var itemid = request.body.itemid;
+    
     // If logged in
     if (username) {
-        notes.del({name:name}, {username:username});
+        notes.del(itemid);
+        
+        response.redirect('/allNotes');
         }
+        
     // Sends to another route
     else {
         response.redirect('/');
