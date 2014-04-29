@@ -12,13 +12,10 @@
                 <input type="hidden" name="itemid" value="<%= note._id %>">
                 <input type="submit" value="Delete">
             </form>
-            </td>
-            <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
-            <input type="submit" value="Delete"></td>
-            <td>
-                <a href="/note/<%= note._id %>"><%= note.name %></a>
-                <input type="submit" value="Delete">
-            </td>
+            <form method="post" action="/edit">
+                <input type="hidden" name="itemid" value="<%= note._id %>">
+                <input type="submit" value="Edit">
+            </form>
         </tr>
     <% }); %>
 </table>
