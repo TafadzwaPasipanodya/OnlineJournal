@@ -13,44 +13,28 @@ module.exports.create = function(name, content, callback) {
 };
 
 // Edit an existing note
-module.exports.edit = function(name, callback) {
+module.exports.edit = function(noteid) {
     // Receive the content from the textarea
     var content = request.body.content;
     
-    db.notes.findOne({name:name}, function(error, note) {
+    db.notes.findOne({_id:mongojs.ObjectId(noteid)}, function(error, note) {
         if (error) throw error;
         
         if (note) {
-            note.content = content;
+            db.notes.update({content:content}, content);
         }
-        
-        db.notes.save(note, function(error) {
-            if (error) throw error;
-        });
     });
 };
 
 // Delete a note
-module.exports.delete = function(name, content, callback) {
-    db.notes.remove({name:name, content:content}, function(error) {
+module.exports.del = function(noteid) {
+
+    db.notes.findOne({_id:mongojs.ObjectId(noteid)}, function(error, note) {
         if (error) throw error;
         
-        callback();
-    });
-};
-
-// Save a note
-module.exports.save = function(name, callback) {
-    var content = request.body.content;
-    
-    db.notes.findOne({name:name}, function(error, newnote) {
-        if (error) throw error;
-
-        if (newnote) {
-            newnote.content = content;
-        }
-        db.notes.save(newnote, function(error) {
+        db.notes.remove(note, function(error) {
             if (error) throw error;
+        
         });
     });
 }
@@ -65,7 +49,7 @@ module.exports.retrieveAll = function(callback) {
 
 // View one note from database
 module.exports.retrieveOne = function(itemid, callback) {
-    db.notes.findOne({_id:itemid}, function(error, note) {
+    db.notes.findOne({_id:mongojs.ObjectId(itemid)}, function(error, note) {
         if (error) throw error;
         callback(note);
     });

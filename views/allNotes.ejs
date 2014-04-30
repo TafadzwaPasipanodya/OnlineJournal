@@ -1,17 +1,21 @@
-<% include note %>
+<% include chunks/head %>
+<% include chunks/StuInfo %>
+<% include chunks/nav_bar %>
+<% include chunks/noteMenu %>
 
 <table>
     <% notes.forEach(function(note) { %>
         <tr>
-<<<<<<< HEAD
             <td><big><b><%= note.name %></b></big>
             <p><small><%= note.content%></small></p>
-            <input type="submit" value="Delete">
-            </td>
-=======
-            <td><a href=“/note/<%= note._id %>”><%= note.name %></a>
-            <input type="submit" value="Delete"></td>
->>>>>>> f0dfb294221255e4818ffa802319a76ebbd0387a
+            <form method="post" action="/delete">
+                <input type="hidden" name="itemid" value="<%= note._id %>">
+                <input type="submit" value="Delete">
+            </form>
+            <form method="post" action="/edit">
+                <input type="hidden" name="itemid" value="<%= note._id %>">
+                <input type="submit" value="Edit">
+            </form>
         </tr>
     <% }); %>
 </table>
