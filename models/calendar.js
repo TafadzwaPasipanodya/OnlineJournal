@@ -7,9 +7,15 @@ function numberOfDays(year, month) {
 // function to get the current month's name
 module.exports.thisMonth = function() {
     var today = new Date();
-    var month = today.getMonth()+1; //January is 0!
+    var month = today.getMonth(); //January is 0!
     var months = ["January","February","March","April","May", "June","July", "August","November","December"];
     return months[month];
+}
+
+module.exports.thisYear = function() {
+    var today = new Date();
+    var year = today.getFullYear(); //January is 0
+    return year;
 }
 
 // function to get all the days in a given month

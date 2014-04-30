@@ -1,3 +1,20 @@
 a {
     color: #000000;
 }
+
+tr {
+    height: 100px;
+}
+td{
+    text-align: right;
+    width: 14.3%;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+}
+table{
+    width: 700px;
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+}

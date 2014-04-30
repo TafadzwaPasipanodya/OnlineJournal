@@ -11,9 +11,10 @@ module.exports = function(request, response) {
         var month = today.getMonth(); //January is 0!
         var year = today.getFullYear();
        
-        this_month = calendar.thisMonth();
+        this_month_year = calendar.thisMonth() + " " + calendar.thisYear();
+        
         calendar.daysInMonths(year, month, function(days){
-            response.render('calendar',{calendarMonth:this_month,month:days,username:username});
+            response.render('calendar',{calendarMonth:this_month_year,month:days,username:username});
             });
     }
     
