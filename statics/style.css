@@ -13,8 +13,12 @@ td{
     border-color: black;
 }
 table{
-    width: 700px;
+    width: 1400px;
     border: solid;
     border-width: 1px;
     border-color: black;
+}
+
+ul {
+    list-style-type: none;
 }

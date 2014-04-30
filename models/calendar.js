@@ -1,3 +1,9 @@
+// A model for a calendar collection
+var mongojs = require('mongojs');
+
+// Create calendar database
+var db = mongojs('calendar', ['events']);
+
 // function to get the total number of days in a given month
 function numberOfDays(year, month) {
     var d = new Date(year, month, 0);
@@ -19,7 +25,7 @@ module.exports.thisYear = function() {
 }
 
 // function to get all the days in a given month
-module.exports.daysInMonths = function (year, month, callback){
+module.exports.daysInMonths = function (year, month){
     var days = ["","","","","","","",
                 "","","","","","","",
                 "","","","","","","",
@@ -34,5 +40,32 @@ module.exports.daysInMonths = function (year, month, callback){
     for (var i = n; i<n+m; i++) {
         days[i] = i-(n-1);
     }
-        callback(days);
+        return days;
 }
+
+
+module.exports.events = function(list_of_events,days_in_months){
+    month_events = [[],[],[],[],[],[],[],
+                    [],[],[],[],[],[],[],
+                    [],[],[],[],[],[],[],
+                    [],[],[],[],[],[],[],
+                    [],[],[],[],[],[],[],
+                    [],[],[],[],[],[],[]];
+    
+    
+    list_of_events.forEach(function(event) {
+        var date = parseInt(event.date);
+        var index = days_in_months.indexOf(date);
+        month_events[index].push(event);
+    });
+    return month_events;
+
+}
+
+// Function to get a list of visitors
+module.exports.retrieve = function(month, year, callback) {
+    db.events.find({month:month, year:year}, function(error, events_) {
+        if (error) throw error;
+        callback(events_);
+    });
+};
