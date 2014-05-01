@@ -32,6 +32,8 @@ app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
 app.post('/delete', require('./routes/delete'));
 app.get('/calendarTab', require('./routes/calendarTab'));
+app.get('/addEvent', require('./routes/addEvent'));
+app.post('/addingEvent', require('./routes/addingEvent'));
 
 // Default route
 app.get('*', function(request,response) {

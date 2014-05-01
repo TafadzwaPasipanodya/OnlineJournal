@@ -2,9 +2,9 @@
 <% include chunks/StuInfo %>
 <% include chunks/nav_bar %>
 
-<!--<% %>-->
-<div id ="date">
-<h1><%=calendarMonth %></h1>
+<a href="/addEvent">Add an event</a>
+<div id ="calendarHeading">
+    <h1><%=calendarMonth %></h1>
 </div>
 <table>
     <tr>
@@ -57,16 +57,17 @@
         <td><div class="date"> <ul> <li><%= month[34] %> </li> <% events[34].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
     </tr>
     <%if (month[35] != ""){ %>
-     <tr>
-        <td><div class="date"> <ul> <li><%= month[35] %> </li> <% events[35].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[36] %> </li> <% events[36].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[37] %> </li> <% events[37].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[38] %> </li> <% events[38].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[39] %> </li> <% events[39].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[40] %> </li> <% events[40].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-        <td><div class="date"> <ul> <li><%= month[41] %> </li> <% events[41].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
-    </tr>
-      <%} %>
+        <tr>
+            <td><div class="date"> <ul> <li><%= month[35] %> </li> <% events[35].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[36] %> </li> <% events[36].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[37] %> </li> <% events[37].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[38] %> </li> <% events[38].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[39] %> </li> <% events[39].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[40] %> </li> <% events[40].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+            <td><div class="date"> <ul> <li><%= month[41] %> </li> <% events[41].forEach(function(event) { %>  <li> <%= event.name %> </li> <% }); %> </ul></div></td>
+        </tr>
+    <% } %>
 </table>
+
 
 <% include chunks/foot %>
