@@ -8,7 +8,7 @@ module.exports = function(request,response) {
 
         // If logged in
     if (username) {
-        response.redirect('/editnote');
+        response.render('editnote', itemid);
         }
         
     // Sends to another route
