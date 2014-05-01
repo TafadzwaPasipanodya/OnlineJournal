@@ -70,16 +70,16 @@ module.exports.retrieve = function(month, year, callback) {
     });
 };
 
-module.exports.create = function(name,date, callback){
+module.exports.create = function(name,date, organizer, callback){
     var year = date.toString().substring(0,4);
     var month = date.toString().substring(5,7);
     var day = date.toString().substring(8,date.toString().length);
     
-    db.events.findOne({year:year, month:month, date:day}, function(error, event) {
+    db.events.findOne({year:year, month:month, date:day,name:name}, function(error, event) {
         if (error) throw error;
         
         if (!event){
-            event = {name:name, year:parseInt(year), month:parseInt(month)-1, date:parseInt(day)};
+            event = {name:name, year:parseInt(year), month:parseInt(month)-1, date:parseInt(day), organizer:organizer, attending:[]};
         }
         
         db.events.save(event, function(error) {
