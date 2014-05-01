@@ -28,6 +28,7 @@ app.get('/noteTab', require('./routes/noteTab'));
 app.post('/note', require('./routes/note'));
 app.get('/allNotes', require('./routes/allNotes'));
 app.get('/note/:id', require('./routes/oneNote'));
+app.post('/oneNote', require('./routes/oneNote'));
 app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
 app.post('/delete', require('./routes/delete'));
