@@ -6,11 +6,12 @@
 <table>
     <% notes.forEach(function(note) { %>
         <tr>
-            <td><a href="/note/<%= note._id %>"><%= note.name %></a></td>
+            <td><a href="/note/<%= note._id %>"><%= note.name %></a>
             <form method="post" action="/delete">
                 <input type="hidden" name="itemid" value="<%= note._id %>">
                 <input type="submit" value="Delete">
             </form>
+            </td>
         </tr>
     <% }); %>
 </table>
