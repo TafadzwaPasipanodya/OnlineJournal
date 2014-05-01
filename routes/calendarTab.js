@@ -10,11 +10,17 @@ module.exports = function(request, response) {
         var today = new Date();
         var month = today.getMonth(); //January is 0!
         var year = today.getFullYear();
+       // var events_ = calendar.events();
        
-        this_month = calendar.thisMonth();
-        calendar.daysInMonths(year, month, function(days){
-            response.render('calendar',{calendarMonth:this_month,month:days,username:username});
-            });
+        var this_month_year = calendar.thisMonth() + " " + calendar.thisYear();
+        
+        var days = calendar.daysInMonths(year, month);
+        
+        calendar.retrieve(parseInt(month), parseInt(year), function(list_of_events){
+            events_ = calendar.events(list_of_events, days);
+            response.render('calendar', {username:username, calendarMonth:this_month_year, month:days, events:events_});
+            }
+        );
     }
     
     // Sends to another route

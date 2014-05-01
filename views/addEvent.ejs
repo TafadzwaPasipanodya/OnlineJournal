@@ -1,0 +1,13 @@
+<% include chunks/head %>
+<% include chunks/StuInfo %>
+<% include chunks/nav_bar %>
+<div>
+    <form method="post" action="/addingEvent">
+        <fieldset>
+            <input type="text" name="name" id="name" placeholder="Event name">
+            <input type="date" name="date" id="date" >
+            <input type="submit" value="Add">
+        </fieldset>
+    </form>
+</div>
+<% include chunks/foot %>

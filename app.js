@@ -32,7 +32,12 @@ app.get('/addNote', require('./routes/addNote'));
 app.post('/addNote', require('./routes/addNote'));
 app.post('/delete', require('./routes/delete'));
 app.get('/calendarTab', require('./routes/calendarTab'));
+<<<<<<< HEAD
 app.post('/edit', require('./routes/edit'));
+=======
+app.get('/addEvent', require('./routes/addEvent'));
+app.post('/addingEvent', require('./routes/addingEvent'));
+>>>>>>> 1057a153f6217db54b7ce7711fca935ea6996127
 
 // Default route
 app.get('*', function(request,response) {
