@@ -25,11 +25,3 @@ module.exports = function(request, response) {
         reponse.redirect('/');
     }
 };
-
-/*
-        if (username) {
-        notes.edit(itemid, content, function() {
-            response.render('oneNote', {note:oneNote, username:username});
-        })
-    }
-    */

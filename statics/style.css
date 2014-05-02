@@ -1,10 +1,48 @@
+/* Colors:
+ * #134C73
+ * #1891BD
+ * #C3D4D6
+ * #FFFFFF
+ * #8FFC18
+ **/
+
 a {
-    color: #000000;
+    color: #FFFFFF;
+}
+
+img, input, footer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo{
+    float: left;
+}
+
+.class {
+    float: right;
+}
+
+nav {
+    display: inline-block;
+    clear: both;
+    
+}
+
+fieldset {
+    border-color: #8FFC18;
+}
+
+body {
+    color: #134C73;
+    background-color: #C3D4D6;
 }
 
 tr {
     height: 100px;
 }
+
 td{
     text-align: right;
     width: 14.3%;
@@ -21,4 +59,13 @@ table{
 
 ul {
     list-style-type: none;
+}
+
+footer {
+    display: table;
+    text-align: center;
+}
+
+.left, .right {
+    display: inline;
 }

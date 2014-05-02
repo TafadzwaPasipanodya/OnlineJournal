@@ -20,7 +20,6 @@ module.exports = function(request,response) {
         notes.edit(noteid, content, function(note) {
             response.render('oneNote', {username:username, note:note});
         })
-        //response.render('editnote', {_id:noteid, username:username, content:content});
     }
         
     // Sends to another route

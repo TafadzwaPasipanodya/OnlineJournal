@@ -25,15 +25,8 @@ module.exports.edit = function(noteid, content, callback) {
             if (error) throw error;
             callback(note);
         });
-        /*
-        if (note) {
-            db.notes.update({_id:mongojs.ObjectId(noteid)}, {$set: {content: content}});
-        }
-        callback(note);*/
     });
 };
-
-//db.notes.update({_id:ObjectId("53628a2fa41dc1dbbc000002")}, {$set: {content: 'It Works~'}})
 
 // Delete a note
 module.exports.del = function(noteid) {
