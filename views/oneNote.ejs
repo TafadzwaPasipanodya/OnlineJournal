@@ -4,8 +4,8 @@
 <% include chunks/noteMenu %>
 
 <h3><%= note.name %></h3>
-<form method=“post” action=“/note">
-    <textarea name=“comment”><%= note.content %></textarea>
+<form method="post" action="/edit/<%= note._id %>">
+    <textarea name="content"><%= note.content %></textarea>
     <input type="submit" value="Save">
 </form>
 
