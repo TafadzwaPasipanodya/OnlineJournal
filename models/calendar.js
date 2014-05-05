@@ -111,4 +111,3 @@ module.exports.delete_event = function(name,date,organizer,callback){
     callback(true);
 };
 
-};
