@@ -4,11 +4,11 @@
 <% include chunks/noteMenu %>
 
 <div>
-    <form method="post" id="addNote" action="/note">
+    <form id="addNote" method="post"  action="/note">
         <fieldset>
-            <input type="text" name="name" id="name" placeholder="Note Name" required>
-            <textarea name="content" wrap="off" id="content" placeholder="Note" required></textarea>
-            <input id="save" type="submit" value="Save">
+            <input id="addNote_name" type="text"  name="name"  placeholder="Note Name" required>
+            <textarea id="addNote_content" name="content"  wrap="off"  placeholder="Note" required></textarea>
+            <input id="addNote_save" type="submit" value="Save">
         </fieldset>
     </form>
 </div>

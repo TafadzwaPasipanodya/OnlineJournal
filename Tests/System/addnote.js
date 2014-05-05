@@ -12,16 +12,16 @@ exports['setup'] = function(test) {
 
 exports['make a note'] = function(test) {
     test.expect(2);
-
+    
     browser.visit('http://localhost:8082/', function() {
         test.ok(browser.query('#addNote'));
+        
         browser.
-            fill('#name', 'name').
-            fill('#content', 'content').
-            pressButton('#save', function() {
-                console.log('HEY');
-                test.ok(browser.query('#view'));
-                browser.clickLink('#view', function() {
+            fill('#addNote_name', 'name').
+            fill('#addNote_content', 'content').
+            pressButton('#addNote_save', function() {
+                test.ok(browser.query('#logout'));
+                browser.clickLink('#logout', function() {
                     test.done();
                 });
             });
