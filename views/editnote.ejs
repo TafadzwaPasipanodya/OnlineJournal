@@ -3,7 +3,7 @@
 <% include chunks/nav_bar %>
 <% include chunks/noteMenu %>
 
-<table>
+<!-- <table>
     <% notes.forEach(function(note) { %>
         <tr>
             <form method="post" action="/note">
@@ -15,6 +15,10 @@
             </form>
         </tr>
     <% }; %>
-</table>
+</table>-->
+
+<h3><%= note.name %></h3>
+    <p><%= note.content %></p>
+
 
 <% include chunks/foot %>
