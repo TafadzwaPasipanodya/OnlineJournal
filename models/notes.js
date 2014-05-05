@@ -50,8 +50,8 @@ module.exports.retrieveAll = function(callback) {
 };
 
 // View one note from database
-module.exports.retrieveOne = function(itemid, callback) {
-    db.notes.findOne({_id:mongojs.ObjectId(itemid)}, function(error, note) {
+module.exports.retrieveOne = function(noteid, callback) {
+    db.notes.findOne({_id:mongojs.ObjectId(noteid)}, function(error, note) {
         if (error) throw error;
         callback(note);
     });

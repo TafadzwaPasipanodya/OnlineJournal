@@ -17,8 +17,8 @@ module.exports = function(request, response) {
     var content = request.body.content;
     
     if (username) {
-        notes.retrieveOne(noteid, function(oneNote) {
-            response.render('oneNote', {note:oneNote, username:username});
+        notes.retrieveOne(noteid, function(note) {
+            response.render('oneNote', {note:note, username:username});
         });
     }
     else {
