@@ -24,8 +24,16 @@ module.exports = function(request, response) {
             }
         });
         
-        calendar.update(_event, username);
-        response.redirect('/');
+        calendar.update(_event, username,function(success){
+            //registered for event successfuly
+            if(success){
+                response.redirect('/');
+            }else{
+            //failed to register for event view the event page
+            console.log(_event);
+            response.redirect("/calendar/events/"+String(_event._id));}
+        });
+           
     }
         
     // Sends to another route

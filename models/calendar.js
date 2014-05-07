@@ -92,18 +92,21 @@ module.exports.create = function(name, date, time,location, organizer, callback)
 
 // Function to update a db entry
 module.exports.update = function(event, user, callback){
-    console.log(event);
+   
     event.attending.push({person:user});
     
-    db.events.findOne({_id:event._id}, function(error, event) {
+    db.events.findOne({_id:event._id}, function(error, _event) {
         if (error) throw error;
-        // if event is present
-        if (!event){
-        db.events.save(event, function(error) {
-            if (error) throw error;
-        });
-        } else {
-            db.events.remove({_id:events._id}, function(error) {
+        
+        // if event is not present #should be impossible
+        if (!_event){
+            db.events.save(event, function(error) {
+                if (error) throw error;
+            });
+        }
+        //event present in database
+        else {
+            db.events.remove({_id:mongojs.ObjectId(event._id)}, function(error) {
             if (error) throw error;
         });
             db.events.save(event, function(error) {
@@ -117,7 +120,7 @@ module.exports.update = function(event, user, callback){
 };
 
 //delete an event from the calendar
-module.exports.delete_event = function(event,callback){
+module.exports.delete_event = function(event, callback){
     
     db.events.findOne({_id:events._id}, function(error, event) {
         if (error) throw error;
