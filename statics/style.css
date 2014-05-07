@@ -45,16 +45,17 @@ tr {
 
 td{
     text-align: right;
-    width: 14.3%;
+    width: 14%;
     border: solid;
     border-width: 1px;
     border-color: black;
 }
 table{
-    width: 1400px;
+    width: 100%;
     border: solid;
     border-width: 1px;
     border-color: black;
+    margin: 10px auto;
 }
 
 ul {

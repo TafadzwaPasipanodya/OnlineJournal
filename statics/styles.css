@@ -1,0 +1,27 @@
+body {
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+}
+.navbar .brand {
+    max-height: 40px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom:5px;
+}
+ ul.horizontal_menu li {
+            display: inline;
+            list-style-type: none;
+            padding: 2px;
+        }
+footer{
+    bottom: 0;
+    position: relative;
+    width: 100%;
+}
+
+.footer {
+    height: 100px;
+    margin:auto;
+    text-align:center;
+    padding:10px;
+}

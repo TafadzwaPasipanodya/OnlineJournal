@@ -1,22 +1,36 @@
 <% include chunks/head %>
+<% include chunks/nav_bar %>
+ 
+<!-- Main Container -->
+<div class="container">
+  <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                <form id="login" action="/login" method="post">
+                   <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                    
+                    <input id="login_name" type="text" name="name"class="form-control" placeholder="username">
 
-<form id="login" method="post" action="/login">
-    <fieldset>
-        <legend>Login</legend>
-        <input id="login_name" type="text" name="name" placeholder="Username" required>
-        <input id="login_password" type="password" name="password" placeholder="Password" required>
-        <input id="login_submit" type="submit">
-    </fieldset>
-</form>
-
-<form id="register" method="post" action="/register">
-    <fieldset>
-        <legend>Register</legend>
-        <input id="register_name" type="text" name="name" placeholder="Username" required>
-        <input id="register_password" type="password" name="password" placeholder="Password" required>
-        <input id="register_submit" type="submit">
-    </fieldset>
-</form>
+                    </div><br>
+                    <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </span>
+                    
+                    <input id="login_password" type="password" name="password" placeholder="Password" require>
+                    
+                    </div>
+                    <button id="login_submit"  class="btn btn-info btn-block btn-sm login" type="submit">Login</button>
+                </form>
+            </div>
+            <p><a href="reg.ejs">Create an Account?</a></p>
+        </div>
+        
+</div>
 
 <!-- If there is an error, show error -->
 <% if (error) { %>
