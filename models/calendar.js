@@ -120,16 +120,14 @@ module.exports.update = function(event, user, callback){
 };
 
 //delete an event from the calendar
-module.exports.delete_event = function(event, callback){
+module.exports.cancel_event = function(event, callback){
     
-    db.events.findOne({_id:events._id}, function(error, event) {
+    db.events.findOne({_id:mongojs.ObjectId(event._id)}, function(error, _event) {
         if (error) throw error;
         
-        if (event){
-            db.events.remove({_id:events._id}, function(error) {
+            db.events.remove(_event, function(error) {
             if (error) throw error;
         });
-        }
     });
     
     callback(true);
