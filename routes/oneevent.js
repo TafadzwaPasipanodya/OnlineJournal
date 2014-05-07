@@ -4,6 +4,7 @@ var calendar = require('../models/calendar');
 var validator = require('validator');
 
 module.exports = function(request, response) {
+    
     // Get the username from the request session
     var username = request.session.username;
     
@@ -12,6 +13,7 @@ module.exports = function(request, response) {
     
     // This is the desired event's id
     var event_id = url.substring(index+1);
+    console.log(event_id);
     
     
     
@@ -20,13 +22,14 @@ module.exports = function(request, response) {
         // find the particular event
         var list_of_events = request.session.events;
         var _event =  "trial";
-        list_of_events.forEach(function(event){
+        
+        for (var i=0; i<list_of_events.length; i++) {
+            var event = list_of_events[i];
             if (String(event._id) === String(event_id)) {
                 _event = event;
-                console.log(_event);
-                return;
+                break;
             }
-        });
+        }
         console.log(_event);
         response.render('viewevent.ejs', {username:username, event:_event});
         
