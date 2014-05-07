@@ -13,8 +13,6 @@ module.exports = function(request, response) {
     
     // This is the desired event's id
     var event_id = url.substring(index+1);
-    console.log(event_id);
-    
     
     
     //if logged in
@@ -30,12 +28,10 @@ module.exports = function(request, response) {
                 break;
             }
         }
-        console.log(_event);
-        response.render('viewevent.ejs', {username:username, event:_event});
-        
+        response.render('viewevent.ejs', {username:username, event:_event}); 
     }
     
-    // person is not logged in
+    // not logged in
     else {
         reponse.redirect('/calendarTab');
     }
