@@ -21,7 +21,8 @@ app.use(express.session({secret:'CS 340 4/14/2014'}));
 // Route the requests
 app.get('/', require('./routes/index'));
 app.post('/login', require('./routes/login'));
-app.post('/register', require('./routes/register'));
+app.get('/reg',require('./routes/register'));
+app.post('/register', require('./routes/authenticate'));
 app.get('/profile', require('./routes/profile'));
 app.get('/logout', require('./routes/logout'));
 app.get('/noteTab', require('./routes/noteTab'));
