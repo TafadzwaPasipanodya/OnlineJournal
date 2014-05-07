@@ -1,5 +1,6 @@
-// Tests for use cases at the index route
+// Tests for use cases at the notes route
 var notes = require('../../models/notes');
+var users = require('../../models/users');
 var zombie = require('zombie');
 var browser = new zombie();
 
@@ -10,16 +11,16 @@ exports['setup'] = function(test) {
     });
 };
 
-exports['make a note'] = function(test) {
+exports['log in (success)'] = function(test) {
     test.expect(2);
-    
+    console.log('hello');
     browser.visit('http://localhost:8082/', function() {
-        test.ok(browser.query('#addNote'));
-        
+        test.ok(browser.query('#login'));
+        console.log('hey');
         browser.
-            fill('#addNote_name', 'name').
-            fill('#addNote_content', 'content').
-            pressButton('#addNote_save', function() {
+            fill('#login_name', 'username').
+            fill('#login_password', 'password').
+            pressButton('#login_submit', function() {
                 test.ok(browser.query('#logout'));
                 browser.clickLink('#logout', function() {
                     test.done();
