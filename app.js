@@ -1,5 +1,4 @@
 // A server with user authentication
-
 var express = require('express');
 
 // Create a server
