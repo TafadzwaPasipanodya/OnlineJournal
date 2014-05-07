@@ -3,12 +3,16 @@
 
 <% include chunks/noteMenu %>
 
-<div>
-    <form id="addNote" method="post"  action="/note">
-        <fieldset>
-            <input id="addNote_name" type="text"  name="name"  placeholder="Note Name" required>
-            <textarea cols="60" id="addNote_content" name="content"  wrap="off"  placeholder="Note" required></textarea>
-            <input id="addNote_save" type="submit" value="Save">
+<div id="pop">
+    <form id="addNote" role="form" method="post"  action="/note">
+        <fieldset >
+            <div class="form-group">
+            <input id="addNote_name" type="text"  name="name"  placeholder="Title" required>
+    			<label for="name">Note:</label>
+    			<textarea class="input-xxlarge" rows="20"></textarea>
+  			</div>
+            <button id="addNote_save" type="submit" class="btn btn-default btn-lg">Save</button>
+           
         </fieldset>
     </form>
 </div>

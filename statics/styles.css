@@ -27,6 +27,16 @@ footer{
     text-align:center;
     padding:10px;
 }
+<<<<<<< HEAD
+.add_note{
+    width: 700px;
+    border-style:solid;
+}
+#pop{
+    position:relative;
+    margin: 50px auto;
+    margin-left: 80px;
+=======
 .calendarHeading{
 	display: inline;
 	list-style-type: none;
@@ -36,4 +46,5 @@ footer{
 }
 #month{
 	margin-right: 380px;
+>>>>>>> ac636659f16e323d2582b21598ddca8be334a9a2
 }
