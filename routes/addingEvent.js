@@ -8,9 +8,11 @@ module.exports = function(request, response) {
     // Grab info from form
     var name = validator.escape(request.body.name);
     var date = validator.escape(request.body.date);
+    var time = validator.escape(request.body.time);
+    var location = validator.escape(request.body.location);
     
     // Create it and receive whether or not it succeeded 
-    calendar.create(name, date, username, function(success) {
+    calendar.create(name, date,time,location, username, function(success) {
         
         if (success) {
             response.redirect('/calendarTab');
