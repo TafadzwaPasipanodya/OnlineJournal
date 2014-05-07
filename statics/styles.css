@@ -1,7 +1,6 @@
 body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
-	margin-left: auto;
-	margin right: auto;
+
 }
 .navbar .brand {
     max-height: 40px;
@@ -42,9 +41,13 @@ footer{
 	list-style-type: none;
 }
 #create_event{
-	margin-right: 340px;
+	margin-right: 25%;
 }
 #month{
+<<<<<<< HEAD
+	margin-right: 28%;
+=======
 	margin-right: 380px;
 >>>>>>> ac636659f16e323d2582b21598ddca8be334a9a2
+>>>>>>> ff4ad2e0e21a4b1e53c88ed05c4d88a7ab4df041
 }
