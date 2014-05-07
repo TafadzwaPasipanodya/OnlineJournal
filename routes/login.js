@@ -14,6 +14,10 @@ module.exports = function(request,response) {
         
         if (success) {
             request.session.username = name;
+            //get today's date
+            var today = new Date();
+            request.session.month = today.getMonth(); //January is 0!
+            request.session.year = today.getFullYear();
         }
         
         else {

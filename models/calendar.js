@@ -11,16 +11,14 @@ function numberOfDays(year, month) {
 }
 
 // function to get the current month's name
-module.exports.thisMonth = function() {
-    var today = new Date();
-    var month = today.getMonth(); //January is 0!
-    var months = ["January","February","March","April","May", "June","July", "August","November","December"];
+module.exports.thisMonth = function(month) {
+    var months = ["January","February","March","April","May",
+                  "June","July", "August","September","October",
+                  "November","December"];
     return months[month];
 }
 
-module.exports.thisYear = function() {
-    var today = new Date();
-    var year = today.getFullYear(); //January is 0
+module.exports.thisYear = function(year) {
     return year;
 }
 
@@ -92,8 +90,10 @@ module.exports.create = function(name, date, time,location, organizer, callback)
 
 // Function to update a db entry
 module.exports.update = function(event, user, callback){
-   
-    event.attending.push({person:user});
+    // check if user is already attending
+        if (isNotAttending(event, user)) {
+            event.attending.push({person:user});
+        }
     
     db.events.findOne({_id:event._id}, function(error, _event) {
         if (error) throw error;
@@ -117,6 +117,16 @@ module.exports.update = function(event, user, callback){
     });
     
     callback(true);
+};
+
+// Check if this person is already going to this event
+var isNotAttending = function(event, user){
+    var retval = true;
+    event.attending.forEach(function(person){
+        if (String(person.person)===String(user)){
+            retval = false;
+            return;}});
+  return retval;
 };
 
 //delete an event from the calendar
