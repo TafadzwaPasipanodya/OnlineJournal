@@ -1,5 +1,7 @@
 body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+	margin-left: auto;
+	margin right: auto;
 }
 .navbar .brand {
     max-height: 40px;
@@ -24,4 +26,14 @@ footer{
     margin:auto;
     text-align:center;
     padding:10px;
+}
+.calendarHeading{
+	display: inline;
+	list-style-type: none;
+}
+#create_event{
+	margin-right: 340px;
+}
+#month{
+	margin-right: 380px;
 }
