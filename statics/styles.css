@@ -25,3 +25,12 @@ footer{
     text-align:center;
     padding:10px;
 }
+.add_note{
+    width: 700px;
+    border-style:solid;
+}
+#pop{
+    position:relative;
+    margin: 50px auto;
+    margin-left: 80px;
+}
