@@ -27,7 +27,7 @@ module.exports = function(request, response) {
                     day_events.push(event);
                 }
             });
-            response.render('viewdate.ejs', {events:day_events});
+            response.render('viewdate.ejs', {events:day_events, month:month, date:date, year:year});
         });
     }
     
