@@ -18,16 +18,33 @@ exports['log in (success)'] = function(test) {
         test.ok(browser.query('#login'));
         console.log('hey');
         browser.
-            fill('#login_name', 'username').
-            fill('#login_password', 'password').
+            fill('#login_name', 'Kayla').
+            fill('#login_password', 'hello').
             pressButton('#login_submit', function() {
                 test.ok(browser.query('#logout'));
-                browser.clickLink('#logout', function() {
+                    console.log('whats up?');
+
                     test.done();
-                });
             });
     });
 }
+
+exports['make an account (success)'] = function(test) {
+    test.expect(2);
+    
+    browser.visit('http://localhost:8082/addNote', function() {
+        test.ok(browser.query('#addNote'));
+        
+        browser.
+            fill('#addNote_name', 'Hello').
+            fill('#addNote_content', 'World!').
+            pressButton('#addNote_save', function() {
+                test.ok(browser.query('#logout'));
+                    test.done();
+            });
+    });
+}
+
 
 // Empty the database and close the connection
 exports['cleanup'] = function(test) {
