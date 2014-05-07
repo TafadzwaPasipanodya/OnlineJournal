@@ -1,0 +1,16 @@
+<% include chunks/head %>
+<% include chunks/nav_bar %>
+
+<table>
+    <tr>
+        <th><%= month%><%=date%><p>,</p><%=year%></th>
+    </tr>
+    <% events.forEach(function(event) { %>
+    
+        <tr>
+            <td> <a href="/calendar/events/"><%= event.name %><%= event.location %><%= event.time %></a></td>
+        </tr>
+    <% }); %>
+</table>
+
+<% include chunks/foot %>

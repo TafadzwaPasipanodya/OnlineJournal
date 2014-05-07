@@ -36,6 +36,8 @@ app.get('/calendarTab', require('./routes/calendarTab'));
 app.post('/edit/:id', require('./routes/edit'));
 app.get('/addEvent', require('./routes/addEvent'));
 app.post('/addingEvent', require('./routes/addingEvent'));
+app.get('/calendar/:id', require('./routes/oneDate'));
+
 
 
 // Default route
