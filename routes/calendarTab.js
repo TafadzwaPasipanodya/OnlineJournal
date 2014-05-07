@@ -25,6 +25,8 @@ module.exports = function(request, response) {
         // display the main calendar
         calendar.retrieve(parseInt(month), parseInt(year), function(list_of_events){
             events_ = calendar.events(list_of_events, days);
+            // put list of events on session so as to reduce database accesses
+            request.session.events = list_of_events;
             response.render('calendar', {username:username, calendarMonth:this_month_year, month:days, events:events_});
             }
         );

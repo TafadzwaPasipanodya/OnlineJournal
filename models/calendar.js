@@ -70,7 +70,7 @@ module.exports.retrieve = function(month, year, callback) {
 };
 
 // Function to add an event to the DB
-module.exports.create = function(name,date,time,location, organizer, callback){
+module.exports.create = function(name, date, time,location, organizer, callback){
     var year = date.toString().substring(0,4);
     var month = date.toString().substring(5,7);
     var day = date.toString().substring(8,date.toString().length);
@@ -79,7 +79,7 @@ module.exports.create = function(name,date,time,location, organizer, callback){
         if (error) throw error;
         
         if (!event){
-            event = {name:name, year:parseInt(year), month:parseInt(month)-1, date:parseInt(day),time:time,location:location, organizer:organizer, attending:[]};
+            event = {name:name, year:parseInt(year), month:parseInt(month)-1, date:parseInt(day),time:time,location:location, organizer:organizer, attending:[{person:organizer}]};
         }
         
         db.events.save(event, function(error) {
@@ -90,22 +90,43 @@ module.exports.create = function(name,date,time,location, organizer, callback){
     callback(true);
 };
 
-//delete an event from the calendar
-module.exports.delete_event = function(name,date,organizer,callback){
-    var year = date.toString().substring(0,4);
-    var month = date.toString().substring(5,7);
-    var day = date.toString().substring(8,date.toString().length);
+// Function to update a db entry
+module.exports.update = function(event, user, callback){
+    console.log(event);
+    event.attending.push({person:user});
     
-    db.events.findOne({year:year, month:month, date:day,name:name}, function(error, event) {
+    db.events.findOne({_id:event._id}, function(error, event) {
         if (error) throw error;
-        
+        // if event is present
         if (!event){
-            event = {name:name, year:parseInt(year), month:parseInt(month)-1, date:parseInt(day), organizer:organizer, attending:[]};
-        }
-        
-        db.events.remove(event, function(error) {
+        db.events.save(event, function(error) {
             if (error) throw error;
         });
+        } else {
+            db.events.remove({_id:events._id}, function(error) {
+            if (error) throw error;
+        });
+            db.events.save(event, function(error) {
+            if (error) throw error;
+        });   
+        }
+        
+    });
+    
+    callback(true);
+};
+
+//delete an event from the calendar
+module.exports.delete_event = function(event,callback){
+    
+    db.events.findOne({_id:events._id}, function(error, event) {
+        if (error) throw error;
+        
+        if (event){
+            db.events.remove({_id:events._id}, function(error) {
+            if (error) throw error;
+        });
+        }
     });
     
     callback(true);

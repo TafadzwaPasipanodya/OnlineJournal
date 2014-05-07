@@ -3,12 +3,12 @@
 
 <table>
     <tr>
-        <th><%= month%><%=date%><p>,</p><%=year%></th>
+        <th><%= day%></th>
     </tr>
     <% events.forEach(function(event) { %>
     
         <tr>
-            <td> <a href="/calendar/events/"><%= event.name %><%= event.location %><%= event.time %></a></td>
+            <td> <a href="/calendar/events/<%=event._id%>"><%= event.name %><%= event.location %><%= event.time %></a></td>
         </tr>
     <% }); %>
 </table>

@@ -1,0 +1,32 @@
+<% include chunks/head %>
+<% include chunks/nav_bar %>
+<h3>
+<%= event.name %>
+</h3>
+    <form method="post" action="/calendar/events/attend/<%=event._id%>">
+        <fieldset>
+            <input type="submit" value="I'm going!">
+        </fieldset>
+    </form>
+    
+    <% if (username === event.organizer) {%>
+        <form method="post" action="/calendar/events/delete/<%=event._id%>">
+            <fieldset>
+                <input type="submit" value="cancel event">
+            </fieldset>
+        </form>
+    <%}%>
+
+<table>       
+    <tr>
+        <th>Going</th>
+    </tr>
+    
+    <% event.attending.forEach(function(person) { %>
+        <tr>
+             <%= person.person %>
+        </tr>
+    <%});%>
+</table>
+
+<% include chunks/foot %>

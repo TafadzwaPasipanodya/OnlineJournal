@@ -10,24 +10,26 @@ module.exports = function(request, response) {
     var url = request.url;
     var index = url.lastIndexOf("/");
     
-    // This is the desired date to use in calculations
-    var date = url.substring(index+1);
+    // This is the desired event's id
+    var event_id = url.substring(index+1);
     
-    // Get the date to display
-    var year = request.session.year;
-    day = calendar.thisMonth() + " " +String(date) + ", " + String(year);
+    
     
     //if logged in
     if (username) {
+        // find the particular event
         var list_of_events = request.session.events;
-            
-            var day_events = [];
-            list_of_events.forEach(function(event){
-                if (event.date === parseInt(date)){
-                    day_events.push(event);
-                }
-            });
-            response.render('viewdate.ejs', {events:day_events, day:day});
+        var _event =  "trial";
+        list_of_events.forEach(function(event){
+            if (String(event._id) === String(event_id)) {
+                _event = event;
+                console.log(_event);
+                return;
+            }
+        });
+        console.log(_event);
+        response.render('viewevent.ejs', {username:username, event:_event});
+        
     }
     
     // person is not logged in
