@@ -10,6 +10,7 @@ exports['setup'] = function(test) {
     });
 };
 
+
 exports['log in (success)'] = function(test) {
     test.expect(2);
     console.log('hello');
@@ -28,24 +29,23 @@ exports['log in (success)'] = function(test) {
     });
 }
 
-exports['make a note'] = function(test) {
+exports['make an event'] = function(test) {
     test.expect(2);
     
-    browser.visit('http://localhost:8082/addNote', function() {
-        test.ok(browser.query('#addNote'));
+    browser.visit('http://localhost:8082/addEvent', function() {
+        test.ok(browser.query('#addEvent'));
         
         browser.
-            fill('#addNote_name', 'Hello').
-            fill('#addNote_content', 'World!').
-            pressButton('#addNote_save', function() {
-                test.ok(browser.query('#logout'));
-                    test.done();
-            });
+        fill('#name', 'class').
+        fill('#date', '05/17/2014').
+        fill('#time', '1000').
+        fill('#location', 'dana').
+        pressButton('#event_add', function() {
+            test.ok(browser.query('#logout'));
+            test.done();
+        });
     });
 }
-
-
-
 
 // Empty the database and close the connection
 exports['cleanup'] = function(test) {

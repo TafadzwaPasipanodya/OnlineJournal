@@ -3,13 +3,13 @@
 <% include chunks/StuInfo %>
 
 <div>
-    <form method="post" action="/addingEvent">
+    <form id="addEvent" method="post" action="/addingEvent">
         <fieldset>
             <input type="text" name="name" id="name" placeholder="Event name">
             <input type="date" name="date" id="date" >
             <input type="text" name="time" id="time" placeholder="Event stime">
             <input type="text" name="location" id="location" placeholder="Event location">
-            <input type="submit" value="Add">
+            <input id = "event_add" type="submit" value="Add">
         </fieldset>
     </form>
 </div>
