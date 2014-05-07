@@ -24,19 +24,19 @@ module.exports.thisYear = function(year) {
 
 // function to get all the days in a given month
 module.exports.daysInMonths = function (year, month){
-    var days = ["","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","",""]
+    var days = [["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""]]
     var d = new Date(year, month, 1);
     var n = d.getDay();
 
     var m = numberOfDays(year, month);
 
     for (var i = n; i<n+m; i++) {
-        days[i] = i-(n-1);
+        days[Math.floor(i/7)][i%7] = i-(n-1);
     }
         return days;
 }

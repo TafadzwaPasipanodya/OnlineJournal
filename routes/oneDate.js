@@ -12,10 +12,11 @@ module.exports = function(request, response) {
     
     // This is the desired date to use in calculations
     var date = url.substring(index+1);
+    var month =request.session.month;
     
     // Get the date to display
     var year = request.session.year;
-    day = calendar.thisMonth() + " " +String(date) + ", " + String(year);
+    day = calendar.thisMonth(month) + " " +String(date) + ", " + String(year);
     
     //if logged in
     if (username) {
