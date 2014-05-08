@@ -34,7 +34,7 @@ app.post('/addNote', require('./routes/addNote'));
 app.post('/delete', require('./routes/delete'));
 app.get('/calendarTab', require('./routes/calendarTab'));
 app.post('/edit/:id', require('./routes/edit'));
-app.get('/addEvent', require('./routes/addEvent'));
+app.get('/addEvent/:id', require('./routes/addEvent'));
 app.post('/addingEvent', require('./routes/addingEvent'));
 app.get('/calendar/:id', require('./routes/oneDate'));
 app.get('/calendar/events/:id', require('./routes/oneevent'));

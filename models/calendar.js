@@ -79,9 +79,9 @@ module.exports.retrieve = function(month, year, callback) {
 
 // Function to add an event to the DB
 module.exports.create = function(name, date, time,location, organizer, callback){
-    var year = date.toString().substring(0,4);
-    var month = date.toString().substring(5,7);
-    var day = date.toString().substring(8,date.toString().length);
+    var year = String(date.year);
+    var month = String(date.month);
+    var day = String(date.date);
     
     db.events.findOne({year:year, month:month, date:day,name:name}, function(error, event) {
         if (error) throw error;

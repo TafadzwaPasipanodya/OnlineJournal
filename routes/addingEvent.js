@@ -7,9 +7,14 @@ module.exports = function(request, response) {
     var username = request.session.username;
     // Grab info from form
     var name = validator.escape(request.body.name);
-    var date = validator.escape(request.body.date);
     var time = validator.escape(request.body.time);
     var location = validator.escape(request.body.location);
+    
+    //grab infor from session
+    var year = request.session.year;
+    var month = request.session.month;
+    var day = request.session.theDate;
+    var date = {year:year, month:month+1,date:day};
     
     // Create it and receive whether or not it succeeded 
     calendar.create(name, date,time,location, username, function(success) {

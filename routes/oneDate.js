@@ -28,7 +28,7 @@ module.exports = function(request, response) {
                     day_events.push(event);
                 }
             });
-            response.render('viewdate.ejs', {events:day_events, day:day, date:date});
+            response.render('viewdate.ejs', {username:username,events:day_events, day:day, date:date});
     }
     
     // person is not logged in

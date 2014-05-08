@@ -1,12 +1,16 @@
 <% include chunks/head %>
 <% include chunks/nav_bar %>
+<% include chunks/StuInfo %>
 <% include chunks/date_menu %>
 
-<table>
+<table id="day_table">
     <% events.forEach(function(event) { %>
-    
         <tr>
-            <td> <a href="/calendar/events/<%=event._id%>"><%= event.name %><%= event.location %><%= event.time %></a></td>
+            <td class="day">
+                <% include chunks/anEvent %>
+                    
+                
+            </td>
         </tr>
     <% }); %>
 </table>

@@ -1,0 +1,60 @@
+
+#day_table{
+    width: 400px;
+}
+.dateMenu{
+    margin-left: 5%;
+}
+
+#day_table tr td{
+    left: 0px;
+    text-align: left;
+    vertical-align: middle;
+    height:20%;
+}
+.event_infor{
+    width: 200px;
+    padding-left: 5px;
+    background-color:#DBFFB8;
+        
+}
+.when_where{
+    width: 10px;
+    background-color: #F0FFC2; 
+}
+._event{
+    border-bottom: solid;
+    border-bottom-color: #BCBCCC;
+    border-width: 1px;
+    margin-left: 4%;
+}
+#day_table{
+    margin-left:10%; 
+}
+.when_where{
+    width:30%
+}
+#event_name{
+    margin-left:5%;
+}
+#event_controls{
+    padding-left: 12%;
+}
+#event_controls *{
+    display: inline;
+}
+#attending{
+    margin-left: 12%;
+    width: 200px;
+    
+}
+#attending th{
+    text-align: left;
+     height: 20%;
+}
+#attending td{
+    height: 20%;
+    background-color: #F0FFC2;
+    border-bottom: solid;
+    border-bottom-color: #BCBCCC;
+}

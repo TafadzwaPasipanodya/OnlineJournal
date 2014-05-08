@@ -1,10 +1,11 @@
 <% include chunks/head %>
 <% include chunks/nav_bar %>
 
-<h3>
+<h4 id="event_name">
     <%= event.name %>
-</h3>
+</h4>
 
+<div id="event_controls">
 <form method="post" action="/calendar/events/attend/<%=event._id%>">
     <fieldset>
         <input type="submit" value="I'm going!">
@@ -18,10 +19,11 @@
         </fieldset>
     </form>
 <%}%>
+</div>
 
-<table>       
+<table id="attending">       
     <tr>
-        <th>Going</th>
+        <th>Going:</th>
     </tr>
     
     <% event.attending.forEach(function(person) { %>
