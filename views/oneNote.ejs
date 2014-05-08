@@ -1,14 +1,27 @@
 <% include chunks/head %>
 <% include chunks/nav_bar %>
-<% include chunks/StuInfo %>
+
 
 <% include chunks/noteMenu %>
 
-<h3><%= note.name %></h3>
-<form method="post" action="/edit/<%= note._id %>">
-    <textarea name="content"><%= note.content %></textarea>
-    <input type="submit" value="Save">
-</form>
-
+<div id="pop">
+    <form id="addNote" role="form" method="post"  action="/note">
+        <fieldset >
+            <div class="form-group">
+                <input id="addNote_name" type="text"  name="name" value="<%= note.name %>">
+    			<label for="name">Note:</label>
+    			<textarea id="addNote_content" name="content" class="input-xxlarge" rows="20"><%= note.content %></textarea>
+  			</div>
+            <button id="addNote_save" type="submit" class="btn btn-info ">Save</button>
+           
+        </fieldset>
+    </form>
+</div>
 
 <% include chunks/foot %>
+
+            <div class="form-group">
+            <input id="addNote_name" type="text"  name="name"  placeholder="Title" required>
+    			<label for="name">Note:</label>
+    			<textarea id="addNote_content" name="content" class="input-xxlarge" rows="20"></textarea>
+  			</div>

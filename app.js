@@ -51,5 +51,5 @@ app.get('*', function(request,response) {
 });
 
 // Start the server
-app.listen(8082);
+app.listen(8081);
 console.log('Server is up.');
