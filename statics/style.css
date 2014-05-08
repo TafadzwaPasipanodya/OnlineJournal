@@ -1,9 +1,4 @@
-.note_header {
-    height: 25%;
-    width:100%;
-    background: url('note_logo.fw.png') center center no-repeat;
-    background-size: cover;
-}
+
 
 a {
     color: #FFFFFF;
@@ -14,15 +9,13 @@ img, input, footer {
     margin-right: auto;
 }
 
-.logo{
-    float: left;
-}
+
 
 .class {
     float: right;
 }
 
-<<<<<<< HEAD
+
 
 
 fieldset {
@@ -39,7 +32,7 @@ td{
     border: solid;
     border-width: 1px;
     border-color: black;
-=======
+
 
 body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
@@ -47,7 +40,7 @@ body {
 	margin-right: auto;
 	color: #134C73;
         background-color: #C3D4D6;
->>>>>>> b5e9088ea50955090d0743b748b0621abcbcc5fe
+
 }
 footer {
     margin: auto;
@@ -63,4 +56,7 @@ footer div * {
 
 .left, .right {
     display: inline;
+}
+.info{
+    position: relative;
 }
