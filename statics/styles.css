@@ -42,16 +42,6 @@ ul {
     margin-left: 80px;
 }
 
-.calendarHeading{
-    display: inline;
-    list-style-type: none;
-}
-#create_event{
-    margin-right: 340px;
-}
-#month{
-    margin-right: 380px;
-}
 .student{
     float: right;
 }

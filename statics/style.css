@@ -1,5 +1,3 @@
-
-
 a {
     color: #FFFFFF;
 }
@@ -14,25 +12,14 @@ img, input, footer {
 .class {
     float: right;
 }
-
-
-
+.infor {
+    max-width: 30px;
+    margin: 10%;
+}
 
 fieldset {
     border-color: #8FFC18;
 }
-
-tr {
-    height: 100px;
-}
-
-td{
-    text-align: left;
-    width: 14%;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-
 
 body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
@@ -56,7 +43,4 @@ footer div * {
 
 .left, .right {
     display: inline;
-}
-.info{
-    position: relative;
 }
