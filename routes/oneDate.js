@@ -14,6 +14,9 @@ module.exports = function(request, response) {
     var date = url.substring(index+1);
     var month =request.session.month;
     
+    //pute date in session
+    request.session.the_date = date;
+    
     // Get the date to display
     var year = request.session.year;
     day = calendar.thisMonth(month) + " " +String(date) + ", " + String(year);
@@ -33,6 +36,6 @@ module.exports = function(request, response) {
     
     // person is not logged in
     else {
-        reponse.redirect('/calendarTab');
+        response.redirect('/calendarTab');
     }
 };

@@ -42,6 +42,8 @@ app.post('/calendar/events/attend/:id', require('./routes/attend_event'));
 app.post('/calendar/events/cancel/:id', require('./routes/cancel_event'));
 app.get('/prevMonth', require('./routes/prevmonth'));
 app.get('/nextMonth', require('./routes/nextmonth'));
+app.get('/prevDate', require('./routes/prevDate'));
+app.get('/nextDate', require('./routes/nextDate'));
 
 
 
