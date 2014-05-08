@@ -10,7 +10,6 @@ a {
 }
 
 img, input, footer {
-    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -23,6 +22,7 @@ img, input, footer {
     float: right;
 }
 
+<<<<<<< HEAD
 
 
 fieldset {
@@ -39,25 +39,27 @@ td{
     border: solid;
     border-width: 1px;
     border-color: black;
-}
-.calendar{
-    vertical-align:top;
-    text-align: center;
-    width: 140px;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-    margin: 10px auto;
-}
+=======
 
-ul {
-    list-style-type: none;
+body {
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+	margin-left: auto;
+	margin-right: auto;
+	color: #134C73;
+        background-color: #C3D4D6;
+>>>>>>> b5e9088ea50955090d0743b748b0621abcbcc5fe
 }
-
 footer {
-    display: table;
+    margin: auto;
     text-align: center;
+    bottom: 0;
+    width: 50%;
 }
+
+footer div * {
+    display: inline;
+}
+
 
 .left, .right {
     display: inline;

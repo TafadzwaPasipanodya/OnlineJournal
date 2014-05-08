@@ -12,7 +12,7 @@ var getEvent = function(list_of_events, event_id){
             }
         });
     return _event
-    };
+};
 
 module.exports = function(request, response) {
     // Get the username from the request session
@@ -28,8 +28,8 @@ module.exports = function(request, response) {
     // If logged in
     if (username) {
         // find the particular event
-        var list_of_events = request.session.events;
         var _event =  getEvent(list_of_events, event_id);
+        
         
         //update db
         calendar.update(_event, username,function(success){

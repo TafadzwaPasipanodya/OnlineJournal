@@ -8,16 +8,12 @@ module.exports = function(request, response) {
     // If logged in, go to calendar
     if (username) {
         //get today's date
-        var today = new Date();
-        var month = today.getMonth(); //January is 0!
-        var year = today.getFullYear();
-        
-        //store this month and year on the cookies
-        request.session.month = month;
-        request.session.year = year;
+        var today = request.session.today;
+        var month = request.session.month;
+        var year = request.session.year;
        
        // get the name of this month and year to display on calendar
-        var this_month_year = calendar.thisMonth() + " " + calendar.thisYear();
+        var this_month_year = calendar.thisMonth(month) + " " + calendar.thisYear(year);
         
         // get a list of all the dates and which days they fall on
         var days = calendar.daysInMonths(year, month);

@@ -11,40 +11,41 @@ function numberOfDays(year, month) {
 }
 
 // function to get the current month's name
-module.exports.thisMonth = function() {
-    var today = new Date();
-    var month = today.getMonth(); //January is 0!
-    var months = ["January","February","March","April","May", "June","July", "August","November","December"];
+module.exports.thisMonth = function(month) {
+    var months = ["January","February","March","April","May",
+                  "June","July", "August","September","October",
+                  "November","December"];
     return months[month];
 }
 
-module.exports.thisYear = function() {
-    var today = new Date();
-    var year = today.getFullYear(); //January is 0
+module.exports.thisYear = function(year) {
     return year;
 }
 
 // function to get all the days in a given month
 module.exports.daysInMonths = function (year, month){
-    var days = ["","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","","",
-                "","","","","","",""]
+    var days = [["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""],
+                ["","","","","","",""]]
     var d = new Date(year, month, 1);
     var n = d.getDay();
 
     var m = numberOfDays(year, month);
 
     for (var i = n; i<n+m; i++) {
-        days[i] = i-(n-1);
+        days[Math.floor(i/7)][i%7] = i-(n-1);
     }
         return days;
 }
 
 // helper method
 module.exports.events = function(list_of_events, days_in_months){
+    var index1 = -1
+    var index2 = -1;
+    
     month_events = [[],[],[],[],[],[],[],
                     [],[],[],[],[],[],[],
                     [],[],[],[],[],[],[],
@@ -55,8 +56,15 @@ module.exports.events = function(list_of_events, days_in_months){
     
     list_of_events.forEach(function(event) {
         var date = parseInt(event.date);
-        var index = days_in_months.indexOf(date);
-        month_events[index].push(event);
+        for (var i=0; i<days_in_months.length; i++) {
+            for (var j=0; j<days_in_months[i].length; j++) {
+                if (String(date) == String(days_in_months[i][j])) {
+                    index1 = i;
+                    index2 = j;
+                }
+            }
+        }
+        month_events[(index1*7)+index2].push(event);
     });
     return month_events;
 }
@@ -92,8 +100,10 @@ module.exports.create = function(name, date, time,location, organizer, callback)
 
 // Function to update a db entry
 module.exports.update = function(event, user, callback){
-   
-    event.attending.push({person:user});
+    // check if user is already attending
+        if (isNotAttending(event, user)) {
+            event.attending.push({person:user});
+        }
     
     db.events.findOne({_id:event._id}, function(error, _event) {
         if (error) throw error;
@@ -117,6 +127,16 @@ module.exports.update = function(event, user, callback){
     });
     
     callback(true);
+};
+
+// Check if this person is already going to this event
+var isNotAttending = function(event, user){
+    var retval = true;
+    event.attending.forEach(function(person){
+        if (String(person.person)===String(user)){
+            retval = false;
+            return;}});
+  return retval;
 };
 
 //delete an event from the calendar

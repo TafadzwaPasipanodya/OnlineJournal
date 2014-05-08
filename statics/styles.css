@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
 	margin-left: auto;
@@ -11,18 +12,18 @@ body {
     padding-bottom: 0;
     margin-bottom:5px;
 }
+=======
+
+
+>>>>>>> b5e9088ea50955090d0743b748b0621abcbcc5fe
  ul.horizontal_menu li {
             display: inline;
             list-style-type: none;
             padding: 2px;
             margin: 10px auto;
         }
-footer{
-    bottom: 0;
-    position: relative;
-    width: 100%;
-}
 
+<<<<<<< HEAD
 .footer {
     height: 100px;
     margin:auto;
@@ -30,6 +31,11 @@ footer{
     padding:10px;
 }
 
+=======
+ul {
+    list-style-type: none;
+}
+>>>>>>> b5e9088ea50955090d0743b748b0621abcbcc5fe
 .add_note{
     width: 700px;
     border-style:solid;
@@ -38,6 +44,7 @@ footer{
     position:relative;
     margin: 50px auto;
     margin-left: 80px;
+<<<<<<< HEAD
 
 .calendarHeading{
 	display: inline;
@@ -49,3 +56,6 @@ footer{
 #month{
 	margin-right: 380px;
 }
+=======
+}
+>>>>>>> b5e9088ea50955090d0743b748b0621abcbcc5fe

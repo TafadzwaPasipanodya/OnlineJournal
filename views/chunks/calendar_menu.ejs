@@ -1,19 +1,15 @@
 <div class ="calendarMenu">
+	<a href="/addEvent">
+		<button type="button" class ="calendarbtn" id="create_event">Create Event</button>
+	</a>
 	
-	<button type="button"class ="calendarHeading" id="create_event">
-		<span class="glyphicon glyphicon-star"></span>
-		<a href="/addEcent">Create Event</a>
-	</button>
-    
-	<h2 class ="calendarHeading" id="month"><%=calendarMonth %></h1>
+	<h3 class ="calendarHeading" id="month"><%=calendarMonth %></h3>
 	
-	<button type="button"class="calendarHeading" id="prevMonth">
-		<span class="glyphicon glyphicon-star"></span>
-		<a href="/addEcent"><</a>
-	</button>
+	<a href="/prevMonth">
+		<button type="button"class="calendarbtn" id="prevMonth"><</button>
+	</a>
 	
-	<button type="button"class ="calendarHeading" id="nextMonth">
-		<span class="glyphicon glyphicon-star"></span>
-		<a href="/addEcent">></a>
-	</button>
+	<a href="/nextMonth">
+		<button type="button" class="calendarbtn" id="nextMonth">></button>
+	</a>
 </div>
