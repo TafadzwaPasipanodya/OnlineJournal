@@ -11,7 +11,6 @@ a {
 }
 
 img, input, footer {
-    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -24,46 +23,25 @@ img, input, footer {
     float: right;
 }
 
-nav {
-    display: inline-block;
-    clear: both;
-    
-}
 
 body {
-    color: #134C73;
-    background-color: #C3D4D6;
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+	margin-left: auto;
+	margin-right: auto;
+	color: #134C73;
+        background-color: #C3D4D6;
 }
-
-tr {
-    height: 100px;
-}
-
-td{
-    text-align: left;
-    width: 14%;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-}
-.calendar{
-    vertical-align:top;
-    text-align: center;
-    width: 140px;
-    border: solid;
-    border-width: 1px;
-    border-color: black;
-    margin: 10px auto;
-}
-
-ul {
-    list-style-type: none;
-}
-
 footer {
-    display: table;
+    margin: auto;
     text-align: center;
+    bottom: 0;
+    width: 50%;
 }
+
+footer div * {
+    display: inline;
+}
+
 
 .left, .right {
     display: inline;
