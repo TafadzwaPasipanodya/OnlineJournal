@@ -1,6 +1,7 @@
 // When viewing the notes allows users the option to edit a specific note
 
 var notes = require('../models/notes');
+var validator = require('validator');
 
 module.exports = function(request,response) {
     // Get the username from the request session
@@ -19,7 +20,7 @@ module.exports = function(request,response) {
     if (username) {
         notes.edit(noteid, content, function(note) {
             response.render('oneNote', {username:username, note:note});
-        })
+        });
     }
         
     // Sends to another route

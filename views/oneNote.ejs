@@ -5,7 +5,7 @@
 <% include chunks/noteMenu %>
 
 <div id="pop">
-    <form id="addNote" role="form" method="post"  action="/note">
+    <form id="addNote" role="form" method="post"  action="/edit/<%=note._id%>">
         <fieldset >
             <div class="form-group">
                 <input id="addNote_name" type="text"  name="name" value="<%= note.name %>">
@@ -19,9 +19,3 @@
 </div>
 
 <% include chunks/foot %>
-
-            <div class="form-group">
-            <input id="addNote_name" type="text"  name="name"  placeholder="Title" required>
-    			<label for="name">Note:</label>
-    			<textarea id="addNote_content" name="content" class="input-xxlarge" rows="20"></textarea>
-  			</div>
