@@ -43,6 +43,9 @@ module.exports.daysInMonths = function (year, month){
 
 // helper method
 module.exports.events = function(list_of_events, days_in_months){
+    var index1 = -1
+    var index2 = -1;
+    
     month_events = [[],[],[],[],[],[],[],
                     [],[],[],[],[],[],[],
                     [],[],[],[],[],[],[],
@@ -53,8 +56,15 @@ module.exports.events = function(list_of_events, days_in_months){
     
     list_of_events.forEach(function(event) {
         var date = parseInt(event.date);
-        var index = days_in_months.indexOf(date);
-        month_events[index].push(event);
+        for (var i=0; i<days_in_months.length; i++) {
+            for (var j=0; j<days_in_months[i].length; j++) {
+                if (String(date) == String(days_in_months[i][j])) {
+                    index1 = i;
+                    index2 = j;
+                }
+            }
+        }
+        month_events[(index1*7)+index2].push(event);
     });
     return month_events;
 }
