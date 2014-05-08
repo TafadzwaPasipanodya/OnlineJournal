@@ -1,10 +1,9 @@
-/* Colors:
- * #134C73
- * #1891BD
- * #C3D4D6
- * #FFFFFF
- * #8FFC18
- **/
+.note_header {
+    height: 25%;
+    width:100%;
+    background: url('note_logo.fw.png') center center no-repeat;
+    background-size: cover;
+}
 
 a {
     color: #FFFFFF;
@@ -24,19 +23,10 @@ img, input, footer {
     float: right;
 }
 
-nav {
-    display: inline-block;
-    clear: both;
-    
-}
+
 
 fieldset {
     border-color: #8FFC18;
-}
-
-body {
-    color: #134C73;
-    background-color: #C3D4D6;
 }
 
 tr {

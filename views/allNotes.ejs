@@ -4,17 +4,17 @@
 
 <% include chunks/noteMenu %>
 
-<table>
+<div id="pop">
     <% notes.forEach(function(note) { %>
-        <tr>
+        <hr/>
             <td><a href="/note/<%= note._id %>"><%= note.name %></a>
             <form method="post" action="/delete">
                 <input type="hidden" name="itemid" value="<%= note._id %>">
                 <input type="submit" value="Delete">
             </form>
             </td>
-        </tr>
     <% }); %>
-</table>
+    <hr/>
+</div>
 <% include chunks/StuInfo %>
 <% include chunks/foot %>
