@@ -2,7 +2,7 @@ tr {
     height: 100px;
 }
 
-td{
+#cal table tr td{
     text-align: left;
     width: 14%;
     border: solid;
