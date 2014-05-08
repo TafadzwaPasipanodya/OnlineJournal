@@ -38,10 +38,22 @@ footer{
 .calendarHeading{
 	display: inline;
 	list-style-type: none;
+	margin-right: 30%;
+	margin-left: 30%;
+
+}
+.dateHeading{
+	display: inline;
+	list-style-type: none;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+.calendarMenu{
+	width: 980px;
+	max-width: 980px;
+	
 }
 #create_event{
-	margin-right: 25%;
 }
 #month{
-	margin-right: 28%;
 }
